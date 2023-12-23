@@ -9,7 +9,7 @@ if (Deno.args.length < 2) {
 const srcDir = Deno.args[0]
 const filePrefix = Deno.args[1]
 // console.log('filePrefix: ', filePrefix)
-const today = dayjs().format('YYYYMMDD')
+const today = dayjs().format('YYYYMMDDHHmmss')
 // console.log('today : ', today)
 
 try {
