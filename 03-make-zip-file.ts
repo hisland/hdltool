@@ -9,7 +9,7 @@ if (Deno.args.length < 2) {
 const srcDir = Deno.args[0]
 const filePrefix = Deno.args[1]
 // console.log('filePrefix: ', filePrefix)
-const today = dayjs().format('YYYYMMDDHHmmss')
+const today = dayjs().format('YYYYMMDD_HHmm')
 // console.log('today : ', today)
 
 try {
@@ -19,19 +19,20 @@ try {
   Deno.exit(1)
 }
 
-let fileName = ''
-for (let ii = 1; ii < 999; ii++) {
-  const str = `${ii}`.padStart(3, '0')
-  fileName = `${filePrefix}_${today}_${str}.zip`
-  try {
-    const ss = Deno.statSync(fileName)
-    // console.log('ss: ', ss)
-  } catch (error) {
-    if (error instanceof Deno.errors.NotFound) {
-      break
-    }
-  }
-}
+const fileName = `${filePrefix}_${today}.zip`
+// let fileName = ''
+// for (let ii = 1; ii < 999; ii++) {
+//   const str = `${ii}`.padStart(3, '0')
+//   fileName = `${filePrefix}_${today}_${str}.zip`
+//   try {
+//     const ss = Deno.statSync(fileName)
+//     // console.log('ss: ', ss)
+//   } catch (error) {
+//     if (error instanceof Deno.errors.NotFound) {
+//       break
+//     }
+//   }
+// }
 // console.log('fileName: ', fileName)
 
 const subp = Deno.run({
