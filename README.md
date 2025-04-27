@@ -10,4 +10,5 @@
 
 ```
 deno install -rqfA https://deno.land/x/hdltool/03-make-zip-file.ts -n make-zip-file
+deno install -rqfA https://deno.land/x/hdltool/04-make-tgz-file.ts -n make-tgz-file
 ```
